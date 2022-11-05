@@ -1,30 +1,25 @@
 package kodlama.io.Devs.entities.concretes;
 
-import java.util.List;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-@Table(name="ProgrammingLanguage")
-@Getter
-@Setter
+@Table(name="SubTechnologies")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class ProgrammingLanguage {
+public class SubTechnologies {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,12 +29,8 @@ public class ProgrammingLanguage {
 	@Column(name="name")
 	private String name;
 	
-	
-	@JsonIgnore
-    @OneToMany(mappedBy = "programmingLanguage",cascade = CascadeType.DETACH)
-    private List<SubTechnologies> subTechnologies;
-	
-	
-	
+	@ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "language_id")
+    private ProgrammingLanguage programmingLanguage;
 
 }
