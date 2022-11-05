@@ -18,46 +18,37 @@ import kodlama.io.Devs.business.responses.GetAllProgrammingLanguagesResponse;
 @RequestMapping("/api/programmingLanguages")
 public class ProgrammingLanguagesController {
 	private ProgrammingLanguageService programmingLanguageService;
-	
+
 	@Autowired
-	public ProgrammingLanguagesController(ProgrammingLanguageService programmingLanguageService) 
-	{
+	public ProgrammingLanguagesController(ProgrammingLanguageService programmingLanguageService) {
 		super();
 		this.programmingLanguageService = programmingLanguageService;
 	}
-	
+
 	@GetMapping("/getall")
-	public List<GetAllProgrammingLanguagesResponse> getAll()
-	{
+	public List<GetAllProgrammingLanguagesResponse> getAll() {
 		return programmingLanguageService.getAll();
 	}
-	
+
 	@GetMapping("/getbyid")
-	public void getById(int id)
-	{
+	public void getById(int id) {
 		programmingLanguageService.getById(id);
 	}
 
 	@PostMapping("/add")
-	public void add(CreateProgrammingLanguagesRequest createProgrammingLanguagesRequest) 
-	{
-		programmingLanguageService.add(createProgrammingLanguagesRequest);	
+	public void add(CreateProgrammingLanguagesRequest createProgrammingLanguagesRequest) {
+		programmingLanguageService.add(createProgrammingLanguagesRequest);
 	}
 
-
 	@DeleteMapping("/deletebyid")
-	public void deleteById(int id) 
-	{
+	public void deleteById(int id) {
 		programmingLanguageService.deleteById(id);
 	}
 
-	
-	  @PostMapping("/update") 
-	  public void updateById(UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) 
-	  {
-	  programmingLanguageService.update(updateProgrammingLanguageRequest);
-	  
-	  }
-	 
+	@PostMapping("/update")
+	public void updateById(UpdateProgrammingLanguageRequest updateProgrammingLanguageRequest) {
+		programmingLanguageService.update(updateProgrammingLanguageRequest);
+
+	}
 
 }

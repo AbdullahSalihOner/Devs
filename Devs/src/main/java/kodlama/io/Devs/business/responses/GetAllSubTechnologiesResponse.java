@@ -11,5 +11,5 @@ public class GetAllSubTechnologiesResponse {
 
 	private int id;
 	private String name;
-	
+
 }

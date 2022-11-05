@@ -14,23 +14,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table(name="SubTechnologies")
+@Table(name = "SubTechnologies")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class SubTechnologies {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name = "id")
 	private int id;
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;
-	
+
 	@ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "language_id")
-    private ProgrammingLanguage programmingLanguage;
+	@JoinColumn(name = "language_id")
+	private ProgrammingLanguage programmingLanguage;
 
 }

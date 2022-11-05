@@ -24,38 +24,31 @@ public class SubTechnologiesController {
 		super();
 		this.subTechnologiesService = subTechnologiesService;
 	}
-	
+
 	@GetMapping("/getall")
-	public List<GetAllSubTechnologiesResponse> getAll()
-	{
+	public List<GetAllSubTechnologiesResponse> getAll() {
 		return subTechnologiesService.getAll();
 	}
-	
+
 	@GetMapping("/getbyid")
-	public void getById(int id)
-	{
+	public void getById(int id) {
 		subTechnologiesService.getById(id);
 	}
 
 	@PostMapping("/add")
-	public void add(CreateSubTechnologiesRequest createSubTechnologiesRequest) 
-	{
-		subTechnologiesService.add(createSubTechnologiesRequest);	
+	public void add(CreateSubTechnologiesRequest createSubTechnologiesRequest) {
+		subTechnologiesService.add(createSubTechnologiesRequest);
 	}
 
-
 	@DeleteMapping("/deletebyid")
-	public void deleteById(int id) 
-	{
+	public void deleteById(int id) {
 		subTechnologiesService.deleteById(id);
 	}
 
-	
-	  @PostMapping("/update") 
-	  public void updateById(UpdateSubTechnologiesRequest updateSubTechnologiesRequest) 
-	  {
-		  subTechnologiesService.update(updateSubTechnologiesRequest);
-	  
-	  }
+	@PostMapping("/update")
+	public void updateById(UpdateSubTechnologiesRequest updateSubTechnologiesRequest) {
+		subTechnologiesService.update(updateSubTechnologiesRequest);
+
+	}
 
 }

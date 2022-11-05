@@ -18,28 +18,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Table(name="ProgrammingLanguage")
+@Table(name = "ProgrammingLanguage")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class ProgrammingLanguage {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name = "id")
 	private int id;
-	
-	@Column(name="name")
+
+	@Column(name = "name")
 	private String name;
-	
-	
+
 	@JsonIgnore
-    @OneToMany(mappedBy = "programmingLanguage",cascade = CascadeType.DETACH)
-    private List<SubTechnologies> subTechnologies;
-	
-	
-	
+	@OneToMany(mappedBy = "programmingLanguage", cascade = CascadeType.DETACH)
+	private List<SubTechnologies> subTechnologies;
 
 }

@@ -7,7 +7,5 @@ import kodlama.io.Devs.entities.concretes.ProgrammingLanguage;
 
 @Repository
 public interface ProgrammingLanguageRepository extends JpaRepository<ProgrammingLanguage, Integer> {
-	
 
-	
 }

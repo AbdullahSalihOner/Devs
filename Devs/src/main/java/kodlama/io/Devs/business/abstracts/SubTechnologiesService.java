@@ -8,15 +8,13 @@ import kodlama.io.Devs.business.responses.GetAllSubTechnologiesResponse;
 
 public interface SubTechnologiesService {
 
-    List<GetAllSubTechnologiesResponse> getAll();
-	
-	void add(CreateSubTechnologiesRequest createSubTechnologiesRequest) ;
-	
+	List<GetAllSubTechnologiesResponse> getAll();
+
+	void add(CreateSubTechnologiesRequest createSubTechnologiesRequest);
+
 	void update(UpdateSubTechnologiesRequest updateSubTechnologiesRequest);
-	
-	
+
 	void getById(int id);
-	
-	
+
 	void deleteById(int id);
 }

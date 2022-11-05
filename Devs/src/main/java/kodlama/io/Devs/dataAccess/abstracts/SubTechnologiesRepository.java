@@ -7,6 +7,5 @@ import kodlama.io.Devs.entities.concretes.SubTechnologies;
 
 @Repository
 public interface SubTechnologiesRepository extends JpaRepository<SubTechnologies, Integer> {
-	
 
 }
